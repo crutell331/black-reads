@@ -1,0 +1,51 @@
+html{
+  background-color: darkgoldenrod;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+.App{
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Landing Page Navbar Styling */
+div.nav{
+  text-align: center;
+  background-color: black;
+  color: white;
+  height: 15%;
+  top: 0;
+  width: 100%;
+  position: sticky;
+}
+
+div.nav > li{
+  list-style-type: none;
+  font-size: 40px;
+}
+
+/* Login Page Styling */
+.landingPage{
+  display:flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: space-between;
+}
+form.login{
+  background-color: black;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 35%;
+  align-self: center;
+}
+form.login > input{
+  max-width: 40%;
+  align-self: center;
+}
+form.login > button{
+  max-width: 40%;
+  align-self: center;
+}
