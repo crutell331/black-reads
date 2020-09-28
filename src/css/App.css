@@ -1,53 +1,97 @@
 body{
-  background-color: darkgoldenrod;
-  margin: 0;
+  background-image:  linear-gradient(#b8870bc4, #d1ad51ce), url("https://tedideas.files.wordpress.com/2020/06/final_booklist_black-writers.jpg?w=750");
   height: 100vh;
-  width: 100vw;
-}
-.App{
-  height: 100vh;
-  width: 100vw;
+  background-size: cover;
+  background-position: center;
 }
 
-/* Landing Page Navbar Styling */
-div.nav{
+/* linear-gradient(#b8860b, #f0daa3), */
+
+#navRow{
+  margin-bottom: 15%;
+}
+#loginSignup{
+  max-width: 40%;
+  margin-left: 35%;
+}
+#navbar{
+  height: 10%;
+}
+
+h1#navbar{
+  font-style: italic;
+}
+
+.image{
+  opacity: .2;
+  height: 100%;
+}
+
+#catCardDeck{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cardBody{
+  display:flex;
+  flex-direction: column;
+}
+.catCardTitle{
+  align-self: center;
+  margin-top: 45%;
+}
+
+/* .App{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  justify-content: start;
+
+} */
+
+/* Navbar Styling */
+/* div.nav{
   overflow-y: hidden;
   text-align: center;
   background-color: black;
   color: white;
-  height: 15%;
+  height: 10%;
   top: 0;
   width: 100vw;
   position: sticky;
+  margin-bottom: 15%;
 }
 
 div.nav > li{
   list-style-type: none;
   font-size: 40px;
+} */
+
+/* div.loginSignup{ 
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  height: 20%;
 }
 
-/* landing Page Styling */
-.landingPage{
-  display:flex;
-  flex-direction: column;
-  height: 50vh;
-  justify-content: space-between;
-}
 form.login{
   background-color: black;
-  width: 20%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 35%;
-  align-self: center;
+  height: 90%;
 }
 form.login > input{
   max-width: 40%;
   align-self: center;
   justify-self: end;
-}
-form.login > button{
+} */
+/* form.login > button{
   max-width: 40%;
   align-self: center;
-}
+} */

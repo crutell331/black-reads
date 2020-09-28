@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
 
 let defaultState = {
-    user: {}
+    user: null,
+    books: [],
+    categories: [],
 }
 
 function userReducer(state = defaultState.user, action) {
@@ -12,9 +14,27 @@ function userReducer(state = defaultState.user, action) {
             return state
     }
 }
+function bookReducer(state = defaultState.books, action) {
+    switch (action.type) {
+        case "GET BOOKS":
+            return action.payload
+        default:
+            return state
+    }
+}
+function categoryReducer(state = defaultState.categories, action) {
+    switch (action.type) {
+        case "GET CATEGORIES":
+            return action.payload
+        default:
+            return state
+    }
+}
 
 let rootReducer = combineReducers({
-    user: userReducer
+    user: userReducer,
+    books: bookReducer,
+    categories: categoryReducer,
 })
 
 export default rootReducer

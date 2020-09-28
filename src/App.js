@@ -1,9 +1,13 @@
 import React from 'react';
 import { Route, withRouter, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { passiveLoginUser } from './redux/actions'
+import { getBooks, passiveLoginUser, getCategories } from './redux/actions'
 import LoginSignup from './containers/LoginSignup';
+import Container from 'react-bootstrap/Container'
+import { Row, Col } from 'react-bootstrap'
 import './css/App.css';
+import Navbar from './components/authComponents/Navbar';
+import BrowseContainer from './components/browseComponents/BrowseContainer';
 
 class App extends React.Component {
 
@@ -11,22 +15,54 @@ class App extends React.Component {
     let token = localStorage.getItem("token")
     if (token) {
       this.props.loginUser(token)
+      this.props.getBooks()
+      this.props.getCategories()
+      this.props.history.push("/browse")
     } else {
-      this.props.history.push('/login')
+      this.props.history.push('/signup')
     }
   }
 
   render() {
-    console.log(this.props.user)
     return (
-      <div className="App">
+      <Container fluid>
+        <Row id="navRow">
+          <Col>
+            <Navbar />
+          </Col>
+        </Row>
         <Switch>
-          <Route path="/login" component={LoginSignup} />
-          <Route path="/signup" component={LoginSignup} />
+          <Route path="/login" render={() => {
+            return (
+              <Row>
+                <Col>
+                  <LoginSignup />
+                </Col>
+              </Row>
+            )
+          }} />
+          <Route path="/signup" render={() => {
+            return (
+              <Row>
+                <Col>
+                  <LoginSignup />
+                </Col>
+              </Row>
+            )
+          }} />
+          <Route path="/browse" render={() => {
+            return (
+              <Row>
+                <Col>
+                  <BrowseContainer />
+                </Col>
+              </Row>
+            )
+          }} />
 
         </Switch>
         {/* <LandingPage /> */}
-      </div>
+      </Container>
     );
 
   }
@@ -36,7 +72,11 @@ function msp(state) {
   return { user: state.user }
 }
 function mdp(dispatch) {
-  return { loginUser: (token) => dispatch(passiveLoginUser(token)) }
+  return ({
+    loginUser: (token) => dispatch(passiveLoginUser(token)),
+    getBooks: () => dispatch(getBooks()),
+    getCategories: () => dispatch(getCategories())
+  })
 }
 
 export default connect(msp, mdp)(withRouter(App));

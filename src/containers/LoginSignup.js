@@ -1,13 +1,12 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import LandingNavbar from '../components/LandingNavbar'
-import Login from '../components/Login'
-import Signup from '../components/Signup'
+import Login from '../components/authComponents/Login'
+import Signup from '../components/authComponents/Signup'
 function LoginSignup() {
+    const path = useLocation().pathname
     return (
-        <div className="landingPage">
-            <LandingNavbar />
-            {useLocation().pathname === "/login" ? <Login /> : <Signup />}
+        <div className="loginSignup">
+            {path === "/login" ? <Login /> : <Signup />}
         </div>
     )
 }
