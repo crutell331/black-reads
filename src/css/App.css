@@ -1,4 +1,4 @@
-html{
+body{
   background-color: darkgoldenrod;
   margin: 0;
   height: 100vh;
@@ -11,12 +11,13 @@ html{
 
 /* Landing Page Navbar Styling */
 div.nav{
+  overflow-y: hidden;
   text-align: center;
   background-color: black;
   color: white;
   height: 15%;
   top: 0;
-  width: 100%;
+  width: 100vw;
   position: sticky;
 }
 
@@ -25,7 +26,7 @@ div.nav > li{
   font-size: 40px;
 }
 
-/* Login Page Styling */
+/* landing Page Styling */
 .landingPage{
   display:flex;
   flex-direction: column;
@@ -44,6 +45,7 @@ form.login{
 form.login > input{
   max-width: 40%;
   align-self: center;
+  justify-self: end;
 }
 form.login > button{
   max-width: 40%;

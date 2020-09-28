@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../redux/actions'
-class Login extends React.Component {
+class Signup extends React.Component {
     state = {
         username: "",
         password: ""
@@ -33,4 +33,4 @@ function mdp(dispatch) {
     return { loginUser: (userInfo) => dispatch(loginUser(userInfo)) }
 }
 
-export default connect(null, mdp)(Login)
+export default connect(null, mdp)(Signup)
