@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { loginUser } from '../redux/actions'
+import { signupUser } from '../redux/actions'
 class Signup extends React.Component {
     state = {
         username: "",
@@ -14,7 +14,7 @@ class Signup extends React.Component {
 
     submitHandler = (e) => {
         e.preventDefault()
-        this.props.loginUser(this.state)
+        this.props.signupUser(this.state)
         this.setState({ username: "", password: "" })
     }
 
@@ -23,14 +23,14 @@ class Signup extends React.Component {
             <form className="login" onSubmit={this.submitHandler}>
                 <input type="text" name="username" value={this.state.username} onChange={this.changeHandler} />
                 <input type="password" name="password" value={this.state.password} onChange={this.changeHandler} />
-                <button>Log In</button>
+                <button>Sign Up</button>
             </form>
         )
     }
 }
 
 function mdp(dispatch) {
-    return { loginUser: (userInfo) => dispatch(loginUser(userInfo)) }
+    return { signupUser: (userInfo) => dispatch(signupUser(userInfo)) }
 }
 
 export default connect(null, mdp)(Signup)

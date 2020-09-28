@@ -1,13 +1,15 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import LandingNavbar from '../components/LandingNavbar'
 import Login from '../components/Login'
-function LandingPage() {
+import Signup from '../components/Signup'
+function LoginSignup() {
     return (
         <div className="landingPage">
             <LandingNavbar />
-            <Login />
+            {useLocation().pathname === "/login" ? <Login /> : <Signup />}
         </div>
     )
 }
 
-export default LandingPage
+export default LoginSignup

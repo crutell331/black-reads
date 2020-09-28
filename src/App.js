@@ -1,8 +1,8 @@
 import React from 'react';
-import { Route, withRouter } from 'react-router-dom'
+import { Route, withRouter, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { passiveLoginUser } from './redux/actions'
-import LandingPage from './containers/LandingPage';
+import LoginSignup from './containers/LoginSignup';
 import './css/App.css';
 
 class App extends React.Component {
@@ -20,8 +20,12 @@ class App extends React.Component {
     console.log(this.props.user)
     return (
       <div className="App">
-        {/* <Route path="/" component={LandingPage} /> */}
-        <LandingPage />
+        <Switch>
+          <Route path="/login" component={LoginSignup} />
+          <Route path="/signup" component={LoginSignup} />
+
+        </Switch>
+        {/* <LandingPage /> */}
       </div>
     );
 
