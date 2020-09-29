@@ -1,31 +1,67 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
-import Container from 'react-bootstrap/Container'
+
 
 function CategoryShow(props) {
-    let carouselCards = []
-    if (props.category.books) {
-        carouselCards = props.category.books.map(item => {
-            return (
-                <Carousel.Item key={item.id} interval={1000} >
-                    <img
-                        className="d-block w-100"
-                        src={item.img}
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            )
-        })
+    let bookCarouselCards = []
+    let authorCarouselCards = []
+    function renderCarouselCards() {
+        if (props.category.books) {
+            bookCarouselCards = props.category.books.map(book => {
+                return (
+                    <Carousel.Item key={book.id} interval={1000} >
+                        <img
+                            className="carouselImg"
+                            src={book.img}
+                            alt="First slide"
+                        />
+                        <Carousel.Caption>
+                            <h3 className="caption">{book.title}</h3>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                )
+            })
+        }
+        return bookCarouselCards
     }
-    console.log(carouselCards)
+
+    function renderAuthorCarouselCards() {
+        if (props.category.books) {
+            authorCarouselCards = props.category.authors.map(author => {
+                console.log(author)
+                return (
+                    <Carousel.Item key={author.id} interval={1000} >
+                        <img
+                            className="carouselImg"
+                            src={author.img}
+                            alt="First slide"
+                        />
+                        <Carousel.Caption>
+                            <h3 className="caption">{`${author.firstname} ${author.lastname}`}</h3>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                )
+            })
+        }
+        return authorCarouselCards
+    }
+
+
+
+
     return (
-        <Carousel className="carousel">
-            {carouselCards}
-        </Carousel>
+        <>
+            <div className="carouselLabels">
+                <h3 >Featured Books</h3>
+                <h3 style={{ "marginRight": "4%" }}>Featured Authors</h3>
+            </div>
+            <Carousel >
+                {renderCarouselCards()}
+            </Carousel>
+            <Carousel >
+                {renderAuthorCarouselCards()}
+            </Carousel>
+        </>
     )
 }
 
