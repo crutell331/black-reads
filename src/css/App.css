@@ -1,8 +1,9 @@
 body{
-  background-image:  linear-gradient(#b8870bc4, #d1ad51ce), url("https://tedideas.files.wordpress.com/2020/06/final_booklist_black-writers.jpg?w=750");
-  height: 100vh;
+  background-image:  linear-gradient(#b8870b9f, #d1ad51ce), url("https://www.biography.com/.image/t_share/MTY5NzQ2NDYzNTg3MzEyODk4/bio-headers-groups-black-writers.jpg");
+  height: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: left;
+  background-repeat: no-repeat;
 }
 
 /* linear-gradient(#b8860b, #f0daa3), */
@@ -24,23 +25,35 @@ h1#navbar{
 
 .image{
   opacity: .2;
-  height: 100%;
+  max-height: 35vh;
+  max-width: 35vw;
 }
 
-#catCardDeck{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+
+ #catCardDeck{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+.itemCard{
+  margin-bottom: 10%;
 }
-.cardBody{
+
+.cardText{
   display:flex;
   flex-direction: column;
 }
 .catCardTitle{
   align-self: center;
-  margin-top: 45%;
+  margin-top: 22%;
 }
+/* .cardBody{
+  display:flex;
+  flex-direction: column;
+}
+ */ 
 
 /* .App{
   display: flex;
