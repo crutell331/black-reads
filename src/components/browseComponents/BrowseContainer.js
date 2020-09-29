@@ -1,24 +1,32 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
 import { connect } from 'react-redux'
-import { Switch, Route, useLocation } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import CardDeck from 'react-bootstrap/CardDeck'
 import CategoryCard from './CategoryCard'
+import CategoryShow from './CategoryShow'
 
-function BrowseContainer(props) {
-    console.log(props.categories)
-    return (
-        <Switch>
-            <Route path="/browse" render={() => {
-                let cards = props.categories.map(cat => <CategoryCard key={cat.name} category={cat} />)
-                return (
-                    <CardDeck id="catCardDeck">
-                        {cards}
-                    </CardDeck>
-                )
-            }} />
-        </Switch>
-    )
+class BrowseContainer extends React.Component {
+    render() {
+        return (
+            <Switch>
+                <Route path="/browse/categories/:name" render={(routerProps) => {
+                    let name = routerProps.location.pathname.split('/')[3]
+                    let category = this.props.categories.find(cat => cat.name === name)
+                    return (
+                        <CategoryShow category={category ? category : {}} />
+                    )
+                }} />
+                <Route path="/browse" render={() => {
+                    let cards = this.props.categories.map(cat => <CategoryCard key={cat.name} category={cat} />)
+                    return (
+                        <CardDeck id="catCardDeck">
+                            {cards}
+                        </CardDeck>
+                    )
+                }} />
+            </Switch>
+        )
+    }
 }
 
 function msp(state) {

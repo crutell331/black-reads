@@ -1,8 +1,9 @@
 body{
   background-image:  linear-gradient(rgba(0, 0, 0, 0.294), rgba(128, 128, 128, 0.322)), url("https://www.biography.com/.image/t_share/MTY5NzQ2NDYzNTg3MzEyODk4/bio-headers-groups-black-writers.jpg");
   /* background-image:  linear-gradient(#b8870b9f, #d1ad51ce), url("https://www.biography.com/.image/t_share/MTY5NzQ2NDYzNTg3MzEyODk4/bio-headers-groups-black-writers.jpg"); */
-  height: 100%;
-  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vh;
+  background-size: 100% 100%;
   background-position: left;
   background-repeat: no-repeat;
 }
@@ -36,6 +37,8 @@ h1#navbar{
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-around;
+      width: 100vw;
+      height: 100vh;
     }
 
 .itemCard{
@@ -49,6 +52,14 @@ h1#navbar{
 .catCardTitle{
   align-self: center;
   margin-top: 22%;
+}
+
+.carouselContainer{
+  display: flex;
+  flex-direction: row;
+}
+.carouselItem{
+  max-width: 30%;
 }
 /* .cardBody{
   display:flex;
@@ -83,16 +94,17 @@ div.nav > li{
   font-size: 40px;
 } */
 
-/* div.loginSignup{ 
+div.loginSignup{ 
   align-self: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%;
-  height: 20%;
-}
+   flex-direction: row;
+   justify-content: center;
+   margin-left: 25%;
+   margin-top: 25%;
 
-form.login{
+} 
+
+/* form.login{
   background-color: black;
   width: 60%;
   display: flex;
@@ -104,8 +116,8 @@ form.login > input{
   max-width: 40%;
   align-self: center;
   justify-self: end;
-} */
-/* form.login > button{
+} 
+form.login > button{
   max-width: 40%;
   align-self: center;
 } */

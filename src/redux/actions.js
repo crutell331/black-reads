@@ -8,7 +8,6 @@ function getCategories() {
                 let categories = data.map((ele) => {
                     return ele.attributes
                 })
-                console.log(categories)
                 dispatch({ type: "GET CATEGORIES", payload: categories })
             })
             .catch(console.log)
@@ -20,14 +19,12 @@ function getBooks() {
             .then(resp => resp.json())
             .then(({ data }) => {
                 const books = data.map(el => el.attributes)
-                console.log(books)
                 dispatch({ type: "GET BOOKS", payload: books })
             })
             .catch(console.log)
     }
 }
 function signupUser(userInfo) {
-    debugger
     return function (dispatch) {
         fetch("http://localhost:4000/api/v1/users", {
             method: "POST",
