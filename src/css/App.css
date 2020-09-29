@@ -1,5 +1,6 @@
 body{
-  background-image:  linear-gradient(#b8870b9f, #d1ad51ce), url("https://www.biography.com/.image/t_share/MTY5NzQ2NDYzNTg3MzEyODk4/bio-headers-groups-black-writers.jpg");
+  background-image:  linear-gradient(rgba(0, 0, 0, 0.294), rgba(128, 128, 128, 0.322)), url("https://www.biography.com/.image/t_share/MTY5NzQ2NDYzNTg3MzEyODk4/bio-headers-groups-black-writers.jpg");
+  /* background-image:  linear-gradient(#b8870b9f, #d1ad51ce), url("https://www.biography.com/.image/t_share/MTY5NzQ2NDYzNTg3MzEyODk4/bio-headers-groups-black-writers.jpg"); */
   height: 100%;
   background-size: cover;
   background-position: left;
