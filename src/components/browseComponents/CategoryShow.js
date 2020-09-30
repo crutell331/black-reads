@@ -1,15 +1,20 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
-
+import { withRouter } from 'react-router-dom'
 
 function CategoryShow(props) {
     let bookCarouselCards = []
     let authorCarouselCards = []
+
+    function clickHandler(title) {
+        props.history.push(`/books/${title}`)
+    }
+
     function renderCarouselCards() {
         if (props.category.books) {
             bookCarouselCards = props.category.books.map(book => {
                 return (
-                    <Carousel.Item key={book.id} interval={1000} >
+                    <Carousel.Item key={book.id} interval={1000} onClick={() => clickHandler(book.title)} >
                         <img
                             className="carouselImg"
                             src={book.img}
@@ -40,6 +45,7 @@ function CategoryShow(props) {
                             <h3 className="caption">{`${author.firstname} ${author.lastname}`}</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
+
                 )
             })
         }
@@ -65,6 +71,6 @@ function CategoryShow(props) {
     )
 }
 
-export default CategoryShow
+export default withRouter(CategoryShow)
 
         // < CarouselContainer items={props.category ? props.category.books : []} />

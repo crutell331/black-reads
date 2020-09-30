@@ -10,7 +10,7 @@ class BrowseContainer extends React.Component {
         return (
             <Switch>
                 <Route path="/browse/categories/:name" render={(routerProps) => {
-                    let name = routerProps.location.pathname.split('/')[3]
+                    let name = routerProps.match.params.name
                     let category = this.props.categories.find(cat => cat.name === name)
                     return (
                         <CategoryShow category={category ? category : {}} />

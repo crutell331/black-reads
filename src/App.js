@@ -8,6 +8,7 @@ import { Row, Col } from 'react-bootstrap'
 import './css/App.css';
 import Navbar from './components/authComponents/Navbar';
 import BrowseContainer from './components/browseComponents/BrowseContainer';
+import BookShowPage from './components/bookComponents/BookShowPage';
 
 class App extends React.Component {
 
@@ -17,7 +18,6 @@ class App extends React.Component {
       this.props.loginUser(token)
       this.props.getBooks()
       this.props.getCategories()
-      this.props.history.push("/browse")
     } else {
       this.props.history.push('/signup')
     }
@@ -55,6 +55,15 @@ class App extends React.Component {
               <Row>
                 <Col>
                   <BrowseContainer />
+                </Col>
+              </Row>
+            )
+          }} />
+          <Route path="/books" render={() => {
+            return (
+              <Row>
+                <Col>
+                  <BookShowPage />
                 </Col>
               </Row>
             )

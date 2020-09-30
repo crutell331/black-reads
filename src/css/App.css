@@ -1,5 +1,5 @@
 body{
-  background-image:  linear-gradient(rgba(0, 0, 0, 0.294), rgba(128, 128, 128, 0.322)), url("https://www.biography.com/.image/t_share/MTY5NzQ2NDYzNTg3MzEyODk4/bio-headers-groups-black-writers.jpg");
+  background-image:  linear-gradient(rgba(0, 0, 0, 0.842), rgba(128, 128, 128, 0.739)), url("https://c1.wallpaperflare.com/preview/397/1018/334/woman-female-hat-book.jpg");
   /* background-image:  linear-gradient(#b8870b9f, #d1ad51ce), url("https://www.biography.com/.image/t_share/MTY5NzQ2NDYzNTg3MzEyODk4/bio-headers-groups-black-writers.jpg"); */
   min-height: 100vh;
   min-width: 100vh;
@@ -11,14 +11,11 @@ body{
 /* linear-gradient(#b8860b, #f0daa3), */
 
 #navRow{
-  margin-bottom: 10%;
+  margin-bottom: 3.5%;
 }
-#loginSignup{
-  max-width: 40%;
-  margin-left: 35%;
-}
+
 #navbar{
-  height: 10%;
+  height: 5%;
 }
 
 h1#navbar{
@@ -26,7 +23,7 @@ h1#navbar{
 }
 
 .image{
-  opacity: .2;
+  opacity: .35;
   max-height: 35vh;
   max-width: 35vw;
 }
@@ -52,6 +49,7 @@ h1#navbar{
 .catCardTitle{
   align-self: center;
   margin-top: 22%;
+  font-size: 1.5em;
 }
 
 .carouselContainer{
@@ -139,9 +137,67 @@ h1#navbar{
   justify-content: space-around;
   color: white;
 }
+div.loginSignup {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top:10%;
+}
+#loginSignup {
+    margin-right: 25%;
+    max-width: 40%;
+    margin-left: 25%;
+}
+
+img.carouselImg{
+  opacity: .9;
+}
+
+.carousel-item{
+  cursor: pointer
+}
+
+.author-name{
+  height: 20%;
+  color: white;
+}
+
+.heart{
+  width: 20px;
+  height: 20px;
+}
+
+img.book-cover{
+  max-width: 55%;
+}
+
+div.book-show{
+  display:flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
 
 
 
+span.buttons-container{
+  align-self: flex-end;
+}
+div.nested-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 35%;
+}
+
+p.summary{
+  max-width: 55%;
+  margin-top:1%;
+  color: rgb(221, 214, 214);
+}
 
 /* 
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
@@ -205,15 +261,7 @@ div.nav > li{
   font-size: 40px;
 } */
 
-div.loginSignup{ 
-  align-self: center;
-  display: flex;
-   flex-direction: row;
-   justify-content: center;
-   margin-left: 25%;
-   margin-top: 25%;
 
-} 
 
 /* form.login{
   background-color: black;
