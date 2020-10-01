@@ -1,5 +1,18 @@
 
 
+function getAuthors() {
+    return function (dispatch) {
+        fetch("http://localhost:4000/api/v1/authors")
+            .then(resp => resp.json())
+            .then(({ data }) => {
+                let authors = data.map((ele) => {
+                    return ele.attributes
+                })
+                dispatch({ type: "GET AUTHORS", payload: authors })
+            })
+            .catch(console.log)
+    }
+}
 function getCategories() {
     return function (dispatch) {
         fetch("http://localhost:4000/api/v1/categories")
@@ -84,4 +97,4 @@ function passiveLoginUser(token) {
 }
 
 
-export { loginUser, passiveLoginUser, signupUser, getBooks, getCategories }
+export { loginUser, passiveLoginUser, signupUser, getBooks, getCategories, getAuthors }

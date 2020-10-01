@@ -6,15 +6,18 @@ function CategoryShow(props) {
     let bookCarouselCards = []
     let authorCarouselCards = []
 
-    function clickHandler(title) {
+    function bookClickHandler(title) {
         props.history.push(`/books/${title}`)
+    }
+    function authorClickHandler(name) {
+        props.history.push(`/authors/${name}`)
     }
 
     function renderCarouselCards() {
         if (props.category.books) {
             bookCarouselCards = props.category.books.map(book => {
                 return (
-                    <Carousel.Item key={book.id} interval={1000} onClick={() => clickHandler(book.title)} >
+                    <Carousel.Item key={book.id} interval={1000} onClick={() => bookClickHandler(book.title)} >
                         <img
                             className="carouselImg"
                             src={book.img}
@@ -35,14 +38,14 @@ function CategoryShow(props) {
             authorCarouselCards = props.category.authors.map(author => {
                 console.log(author)
                 return (
-                    <Carousel.Item key={author.id} interval={1000} >
+                    <Carousel.Item key={author.id} interval={1000} onClick={() => authorClickHandler(author.name)}>
                         <img
                             className="carouselImg"
                             src={author.img}
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3 className="caption">{`${author.firstname} ${author.lastname}`}</h3>
+                            <h3 className="caption">{`${author.name}`}</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
 

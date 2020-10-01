@@ -179,12 +179,14 @@ div.book-show{
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
+  margin-top:1%;
 }
 
 
 
 span.buttons-container{
   align-self: flex-end;
+  width: 55%;
 }
 div.nested-flex{
   display: flex;
@@ -197,6 +199,11 @@ p.summary{
   max-width: 55%;
   margin-top:1%;
   color: rgb(221, 214, 214);
+}
+
+img.book-img{
+  max-width:55vw;
+  max-height:50vh;
 }
 
 /* 

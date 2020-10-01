@@ -3,14 +3,15 @@ import { NavLink } from 'react-router-dom'
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 
-function BookCard(props) {
-    console.log(props.book)
+function AuthorCard({ author }) {
+    console.log(author)
     function renderBook() {
-        if (props.book) {
+        if (author) {
             return (
                 <div className="book-show">
+                    <h2 style={{ color: "white" }}>{author.name}</h2>
                     <div className="nested-flex">
-                        <Image src={props.book.img} rounded className="book-img" />
+                        <Image src={author.img} rounded className="book-img" />
                         <span className="buttons-container">
                             <div>
                                 <Button type="submit">Favorite</Button><br />
@@ -20,7 +21,7 @@ function BookCard(props) {
                             </div>
                         </span>
                     </div>
-                    <p className="summary">{`${props.book.summary}`}</p>
+                    <p className="summary">{`${author.bio}`}</p>
 
                 </div>
 
@@ -37,4 +38,4 @@ function BookCard(props) {
     )
 }
 
-export default BookCard 
+export default AuthorCard 

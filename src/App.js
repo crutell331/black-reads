@@ -1,14 +1,15 @@
 import React from 'react';
 import { Route, withRouter, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { getBooks, passiveLoginUser, getCategories } from './redux/actions'
+import { getBooks, passiveLoginUser, getCategories, getAuthors } from './redux/actions'
 import LoginSignup from './containers/LoginSignup';
 import Container from 'react-bootstrap/Container'
 import { Row, Col } from 'react-bootstrap'
 import './css/App.css';
-import Navbar from './components/authComponents/Navbar';
+import Navbar from './components/Navbar';
 import BrowseContainer from './components/browseComponents/BrowseContainer';
 import BookShowPage from './components/bookComponents/BookShowPage';
+import AuthorShowPage from './components/authorComponents/AuthorShowPage';
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
     if (token) {
       this.props.loginUser(token)
       this.props.getBooks()
+      this.props.getAuthors()
       this.props.getCategories()
     } else {
       this.props.history.push('/signup')
@@ -68,6 +70,15 @@ class App extends React.Component {
               </Row>
             )
           }} />
+          <Route path="/authors" render={() => {
+            return (
+              <Row>
+                <Col>
+                  <AuthorShowPage />
+                </Col>
+              </Row>
+            )
+          }} />
 
         </Switch>
         {/* <LandingPage /> */}
@@ -84,7 +95,8 @@ function mdp(dispatch) {
   return ({
     loginUser: (token) => dispatch(passiveLoginUser(token)),
     getBooks: () => dispatch(getBooks()),
-    getCategories: () => dispatch(getCategories())
+    getCategories: () => dispatch(getCategories()),
+    getAuthors: () => dispatch(getAuthors())
   })
 }
 

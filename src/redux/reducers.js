@@ -4,6 +4,7 @@ let defaultState = {
     user: null,
     books: [],
     categories: [],
+    authors: []
 }
 
 function userReducer(state = defaultState.user, action) {
@@ -30,11 +31,20 @@ function categoryReducer(state = defaultState.categories, action) {
             return state
     }
 }
+function authorReducer(state = defaultState.authors, action) {
+    switch (action.type) {
+        case "GET AUTHORS":
+            return action.payload
+        default:
+            return state
+    }
+}
 
 let rootReducer = combineReducers({
     user: userReducer,
     books: bookReducer,
     categories: categoryReducer,
+    authors: authorReducer
 })
 
 export default rootReducer
