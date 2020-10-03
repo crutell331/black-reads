@@ -5,9 +5,9 @@ import Signup from '../components/authComponents/Signup'
 function LoginSignup() {
     const path = useLocation().pathname
     return (
-        <div className="loginSignup">
+        <>
             {path === "/login" ? <Login /> : <Signup />}
-        </div>
+        </>
     )
 }
 

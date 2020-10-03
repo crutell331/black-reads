@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { loginUser } from '../../redux/actions'
 import Form from 'react-bootstrap/Form'
@@ -26,23 +26,28 @@ class Login extends React.Component {
 
     render() {
         return (
-            <Form id="loginSignup" onSubmit={this.submitHandler}>
-                <Form.Group as={Row}>
-                    <Col sm={10}>
-                        <Form.Control type="text" placeholder="username" name="username" value={this.state.username} onChange={this.changeHandler} />
-                    </Col>
-                </Form.Group>
-                <Form.Group as={Row}>
-                    <Col sm={10}>
-                        <Form.Control type="password" placeholder="passwords" name="password" value={this.state.password} onChange={this.changeHandler} />
-                    </Col>
-                </Form.Group>
-                <Form.Group as={Row}>
-                    <Col>
-                        <Button type="submit">Log in</Button>
-                    </Col>
-                </Form.Group>
-            </Form>
+            <div className="form">
+                <Form id="loginSignup" onSubmit={this.submitHandler}>
+                    <Form.Group as={Row}>
+                        <Col sm={10}>
+                            <Form.Control type="text" placeholder="username" name="username" value={this.state.username} onChange={this.changeHandler} />
+                        </Col>
+                    </Form.Group>
+                    <Form.Group as={Row}>
+                        <Col sm={10}>
+                            <Form.Control type="password" placeholder="passwords" name="password" value={this.state.password} onChange={this.changeHandler} />
+                        </Col>
+                    </Form.Group>
+                    <Form.Group as={Row}>
+                        <Col>
+                            <Button type="submit">Log in</Button>
+                        </Col>
+                    </Form.Group>
+                    <div className="form-text">
+                        <p>New to Black Reads?</p><NavLink to='/signup'>Sign Up</NavLink>
+                    </div>
+                </Form>
+            </div>
         )
         // <form className="login" onSubmit={this.submitHandler}>
         //     <input type="text" name="username" value={this.state.username} onChange={this.changeHandler} />

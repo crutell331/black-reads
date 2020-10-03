@@ -1,295 +1,66 @@
+html{
+  margin:0;
+  padding:0;
+}
 body{
-  background-image:  linear-gradient(rgba(0, 0, 0, 0.842), rgba(128, 128, 128, 0.739)), url("https://c1.wallpaperflare.com/preview/397/1018/334/woman-female-hat-book.jpg");
-  /* background-image:  linear-gradient(#b8870b9f, #d1ad51ce), url("https://www.biography.com/.image/t_share/MTY5NzQ2NDYzNTg3MzEyODk4/bio-headers-groups-black-writers.jpg"); */
-  min-height: 100vh;
-  min-width: 100vh;
-  background-size: 100% 100%;
-  background-position: left;
-  background-repeat: no-repeat;
-}
-
-/* linear-gradient(#b8860b, #f0daa3), */
-
-#navRow{
-  margin-bottom: 3.5%;
-}
-
-#navbar{
-  height: 5%;
-}
-
-h1#navbar{
-  font-style: italic;
-}
-
-.image{
-  opacity: .35;
-  max-height: 35vh;
-  max-width: 35vw;
-}
-
-
- #catCardDeck{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      width: 100vw;
-      height: 100vh;
-    }
-
-.itemCard{
-  margin-bottom: 10%;
-}
-
-.cardText{
-  display:flex;
-  flex-direction: column;
-}
-.catCardTitle{
-  align-self: center;
-  margin-top: 22%;
-  font-size: 1.5em;
-}
-
-.carouselContainer{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.slide{
-  width: 35%;
-  height: 50vh;
-  top: 1%;
-  float: left;
-  margin-left: 12%;
-}
-.carouselImg{
-    width: 100%;
-    height: 50vh;
-    margin-bottom: 40%;
-  }
-.carousel-inner {
-  position: relative;
-  width: 70%;
-  overflow: hidden;
+  width:100vw;
+  height:100vh;
   background-color: black;
-  }
-
-/* position buttons at bottom */
-.carousel-control-next, .carousel-control-prev {
-    position: absolute;
-    top: 100%;
-    bottom: -20%;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 10%;
-    color: #fff;
-    text-align: center;
-    opacity: .5;
-    transition: opacity .15s ease;
 }
-/* bring right arrow closer in */
-.carousel-control-next {
-    right: 30%;
-}
-
-/* Move indicators down and more centered */
-.carousel-indicators {
-    position: absolute;
-    right: 30%;
-    bottom: -9%;
-    left: 0;
-    z-index: 15;
-    display: flex;
-    justify-content: center;
-    padding-left: 0;
-    margin-right: 15%;
-    margin-left: 15%;
-    list-style: none;
-}
-
-/* bring label down */
-.carousel-caption {
-    position: absolute;
-    right: 15%;
-    top: 80%;
-    left: 15%;
-    z-index: 10;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #fff;
-    text-align: center;
-    height:20%;
-}
-.caption{
-  max-height: 100%;
-  overflow:hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.carouselLabels{
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around;
-  color: white;
-}
-div.loginSignup {
-    align-self: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top:10%;
-}
-#loginSignup {
-    margin-right: 25%;
-    max-width: 40%;
-    margin-left: 25%;
-}
-
-img.carouselImg{
-  opacity: .9;
-}
-
-.carousel-item{
-  cursor: pointer
-}
-
-.author-name{
-  height: 20%;
-  color: white;
-}
-
-.heart{
-  width: 20px;
-  height: 20px;
-}
-
-img.book-cover{
-  max-width: 55%;
-}
-
-div.book-show{
-  display:flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  margin-top:1%;
-}
-
-
-
-span.buttons-container{
-  align-self: flex-end;
-  width: 55%;
-}
-div.nested-flex{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 35%;
-}
-
-p.summary{
-  max-width: 55%;
-  margin-top:1%;
-  color: rgb(221, 214, 214);
-}
-
-img.book-img{
-  max-width:55vw;
-  max-height:50vh;
-}
-
-span.nav-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-/* 
-.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+div.background-img{
+  z-index: -1;
+  background-size: cover;
   display: block;
-} */
-/* 
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-} */
+  height:100%;
+  min-height: 100vh;
+  width:100%;
+}
+img.background-img{
+  width:100%;
+  height:100%;
+  opacity:.6;
+}
 
-
-
-
-
-
-
-
-
-
-
-/* .carouselItem{
-  max-width: 30%;
-} */
-/* .cardBody{
+div.navbar{
+  display:flex;
+  flex-direction: row;
+  position: absolute;
+  top:0;
+  height:10vh;
+  width:100vw;
+  background-color:rgba(0, 0, 0, 0.767);
+  margin-bottom:5vh;
+  color:whitesmoke;
+}
+div.app{
   display:flex;
   flex-direction: column;
+  height:100vh;
+  width:100vw;
 }
- */ 
-
-/* .App{
+div.form{
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-  justify-content: start;
+  position: absolute;
+  top: 25%;
+  width: 28vw;
+  height: 35vh;
+  align-self: center;
+  background-color: rgba(51, 51, 51, 0.753);
 
-} */
-
-/* Navbar Styling */
-/* div.nav{
-  overflow-y: hidden;
-  text-align: center;
-  background-color: black;
-  color: white;
-  height: 10%;
-  top: 0;
-  width: 100vw;
-  position: sticky;
-  margin-bottom: 15%;
 }
-
-div.nav > li{
-  list-style-type: none;
-  font-size: 40px;
-} */
-
-
-
-/* form.login{
-  background-color: black;
-  width: 60%;
+#loginSignup{
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height: 90%;
+  margin-left: 15%;
+  margin-top: 30px;
 }
-form.login > input{
-  max-width: 40%;
-  align-self: center;
-  justify-self: end;
-} 
-form.login > button{
-  max-width: 40%;
-  align-self: center;
-} */
+div.form-text{
+  display: flex;
+  flex-direction: row;
+  margin-top:20px;
+  color: whitesmoke;
+}
+div.form-text >p{
+  margin-right:5px;
+}

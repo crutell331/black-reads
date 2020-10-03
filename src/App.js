@@ -21,68 +21,46 @@ class App extends React.Component {
       this.props.getAuthors()
       this.props.getCategories()
     } else {
-      this.props.history.push('/signup')
+      this.props.history.push('/login')
     }
   }
 
   render() {
     return (
-      <Container fluid>
-        <Row id="navRow">
-          <Col>
-            <Navbar />
-          </Col>
-        </Row>
+      <div className="app">
+        <div className="background-img">
+          <img className="background-img" src="https://c1.wallpaperflare.com/preview/397/1018/334/woman-female-hat-book.jpg" />
+        </div>
+        <Navbar />
         <Switch>
           <Route path="/login" render={() => {
             return (
-              <Row>
-                <Col>
-                  <LoginSignup />
-                </Col>
-              </Row>
+              <LoginSignup />
             )
           }} />
           <Route path="/signup" render={() => {
             return (
-              <Row>
-                <Col>
-                  <LoginSignup />
-                </Col>
-              </Row>
+              <LoginSignup />
             )
           }} />
           <Route path="/browse" render={() => {
             return (
-              <Row>
-                <Col>
-                  <BrowseContainer />
-                </Col>
-              </Row>
+              <BrowseContainer />
             )
           }} />
           <Route path="/books" render={() => {
             return (
-              <Row>
-                <Col>
-                  <BookShowPage />
-                </Col>
-              </Row>
+              <BookShowPage />
             )
           }} />
           <Route path="/authors" render={() => {
             return (
-              <Row>
-                <Col>
-                  <AuthorShowPage />
-                </Col>
-              </Row>
+              <AuthorShowPage />
             )
           }} />
 
         </Switch>
-        {/* <LandingPage /> */}
-      </Container>
+      </div>
     );
 
   }
