@@ -206,6 +206,12 @@ img.book-img{
   max-height:50vh;
 }
 
+span.nav-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 /* 
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
   display: block;

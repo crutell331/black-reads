@@ -13,7 +13,6 @@ class Login extends React.Component {
     }
 
     changeHandler = (e) => {
-        console.log("changing")
         e.persist()
         this.setState(() => ({ [e.target.name]: e.target.value }))
     }
@@ -22,7 +21,7 @@ class Login extends React.Component {
         e.preventDefault()
         this.props.loginUser(this.state)
         this.setState({ username: "", password: "" })
-        this.props.history.push("/home")
+        this.props.history.push("/browse/categories")
     }
 
     render() {

@@ -1,4 +1,7 @@
 
+function logoutUser() {
+    return { type: "LOGOUT" }
+}
 
 function getAuthors() {
     return function (dispatch) {
@@ -97,4 +100,4 @@ function passiveLoginUser(token) {
 }
 
 
-export { loginUser, passiveLoginUser, signupUser, getBooks, getCategories, getAuthors }
+export { loginUser, logoutUser, passiveLoginUser, signupUser, getBooks, getCategories, getAuthors }

@@ -11,6 +11,8 @@ function userReducer(state = defaultState.user, action) {
     switch (action.type) {
         case "ADD USER":
             return action.payload
+        case "LOGOUT":
+            return null
         default:
             return state
     }

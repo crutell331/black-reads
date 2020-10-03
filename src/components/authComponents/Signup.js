@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signupUser } from '../../redux/actions'
 import Form from 'react-bootstrap/Form'
@@ -20,6 +21,8 @@ class Signup extends React.Component {
         e.preventDefault()
         this.props.signupUser(this.state)
         this.setState({ username: "", password: "" })
+        this.props.history.push("/browse/categories")
+
     }
 
     render() {
@@ -49,4 +52,4 @@ function mdp(dispatch) {
     return { signupUser: (userInfo) => dispatch(signupUser(userInfo)) }
 }
 
-export default connect(null, mdp)(Signup)
+export default connect(null, mdp)(withRouter(Signup))
