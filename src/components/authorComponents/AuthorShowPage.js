@@ -7,7 +7,7 @@ import AuthorCard from './AuthorCard'
 function AuthorShowPage(props) {
     const name = useLocation().pathname.split('/')[2]
     const author = props.authors.find((author) => author.name === name)
-    console.log(author)
+    console.log("Author show")
     return (
         <AuthorCard author={author} />
     )

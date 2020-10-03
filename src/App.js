@@ -3,8 +3,7 @@ import { Route, withRouter, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getBooks, passiveLoginUser, getCategories, getAuthors } from './redux/actions'
 import LoginSignup from './containers/LoginSignup';
-import Container from 'react-bootstrap/Container'
-import { Row, Col } from 'react-bootstrap'
+
 import './css/App.css';
 import Navbar from './components/Navbar';
 import BrowseContainer from './components/browseComponents/BrowseContainer';
@@ -29,7 +28,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <div className="background-img">
-          <img className="background-img" src="https://c1.wallpaperflare.com/preview/397/1018/334/woman-female-hat-book.jpg" />
+          <img alt="background" className="background-img" src="https://c1.wallpaperflare.com/preview/397/1018/334/woman-female-hat-book.jpg" />
         </div>
         <Navbar />
         <Switch>
