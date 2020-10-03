@@ -21,7 +21,7 @@ class Login extends React.Component {
         e.preventDefault()
         this.props.loginUser(this.state)
         this.setState({ username: "", password: "" })
-        this.props.history.push("/browse/categories")
+        this.props.history.push("/home")
     }
 
     render() {

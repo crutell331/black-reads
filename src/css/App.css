@@ -64,3 +64,64 @@ div.form-text{
 div.form-text >p{
   margin-right:5px;
 }
+/* p.navbar-home{
+  position: absolute;
+  left: 30%;
+}
+p.navbar-genres{
+  position: absolute;
+  left: 38%;
+}
+p.navbar-authors{
+  position: absolute;
+  left: 46.7%;
+}
+p.navbar-themes{
+  position: absolute;
+  left: 56%;
+} */
+div.navbar-items{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items:center;
+  height:100%;
+  width:50%;
+  left: 20%;
+}
+div.navbar-user-items{
+ cursor: pointer;
+}
+div.navbar-user-dropdown{
+  align-content: space-between;
+  background-color:rgba(19, 18, 18, 0.644);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  position: absolute;
+  top: 100%;
+}
+
+div.user-dropdown-content{
+    color: white;
+    padding: 12px 16px;
+    display: block;
+}
+div.navbar-items > p:hover{
+  cursor: pointer;
+  color: darkgoldenrod;
+}
+div.navbar-user-items > p:hover{
+  cursor: pointer;
+  color: darkgoldenrod;
+  /* color:white;
+  background-color: rgba(19, 18, 18, 0.644); */
+}
+
+a.dropdown-item{
+  color: whitesmoke;
+  text-decoration: none;
+}
+a.dropdown-item:hover{
+  background-color: darkgoldenrod;
+}

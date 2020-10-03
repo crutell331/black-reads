@@ -43,7 +43,7 @@ class App extends React.Component {
               <LoginSignup />
             )
           }} />
-          <Route path="/browse" render={() => {
+          <Route path="/home" render={() => {
             return (
               <BrowseContainer />
             )

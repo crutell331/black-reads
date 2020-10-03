@@ -10,27 +10,74 @@ import { logoutUser } from '../redux/actions'
 
 class Bar extends React.Component {
 
+    state = {
+        userDisplay: "none"
+    }
+
     logoutHandler = () => {
         localStorage.clear()
-        this.props.history.push("/login")
+        // this.props.history.push("/login")
         this.props.logoutUser()
     }
+
+    showUserDisplay = () => {
+        this.setState((prevState) => (
+            prevState.userDisplay === "none" ? { userDisplay: "block" } : { userDisplay: "none" }
+        ))
+    }
+    // hideUserDisplay = () => {
+    //     this.setState({ userDisplay: "none" })
+    // }
+
     renderLoginSignup = () => {
         const location = this.props.history.location.pathname
         if (location === "/signup" || location === "/login") {
             return (
                 <div className="navbar">
-                    <h2>Black Reads</h2>
+                    <h2>BlackReads</h2>
                 </div>)
+        } else {
+            return (
+                <div className="navbar">
+                    <h2>BlackReads</h2>
+                    <div className="navbar-items">
+                        <p >Home</p>
+                        <p >Genres</p>
+                        <p >Authors</p>
+                        <p >Themes</p>
+                    </div>
+                    {this.props.user ? (
+                        <div className="navbar-user-items" onClick={this.showUserDisplay} >
+                            <p >Logged In As: {this.props.user.username}
+                                <i className="fa fa-caret-down"></i>
+                            </p>
+                            <div className="navbar-user-dropdown" style={{ display: this.state.userDisplay }}>
+                                <div className="user-dropdown-content">
+                                    <div>
+                                        <NavLink to="/library" className="dropdown-item">Library</NavLink>
+                                    </div>
+                                    <div>
+                                        <NavLink to="/account" className="dropdown-item">Account</NavLink>
+                                    </div>
+                                    <div>
+                                        <NavLink to="/login" onClick={this.logoutUser} className="dropdown-item">Log Out</NavLink>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    ) : null}
+
+                </div>
+            )
         }
     }
 
     render() {
-
         return (
-            <div className="navbar">
-                <h2>Black Reads</h2>
-            </div>
+            <>
+                {this.renderLoginSignup()}
+            </>
         )
     }
 }
