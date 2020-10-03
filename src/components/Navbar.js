@@ -132,10 +132,10 @@ class Bar extends React.Component {
                 <div className="navbar">
                     <h2>BlackReads</h2>
                     <div className="navbar-items">
-                        <p>Home</p>
+                        <p onClick={() => this.props.history.push("/home")}>Home</p>
                         {this.renderGenresItem()}
                         {this.renderAuthorsItem()}
-                        <p>Themes</p>
+                        <p onClick={() => this.props.history.push("/themes")}>Themes</p>
                     </div>
                     {this.renderUser()}
 
