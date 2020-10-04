@@ -28,6 +28,7 @@ function bookReducer(state = defaultState.books, action) {
 function genreReducer(state = defaultState.genres, action) {
     switch (action.type) {
         case "GET GENRES":
+            console.log(action.payload)
             return action.payload
         default:
             return state

@@ -16,6 +16,7 @@ class FeaturedBook extends React.Component {
     }
     render() {
         let { book } = this.props
+        // console.log(book)
         return (
             <>
                 <div className="genre-card" key={book.title} onClick={this.showModal}>
@@ -24,8 +25,19 @@ class FeaturedBook extends React.Component {
                 </div>
                 <div className="modal" style={{ display: this.state.display }}>
                     <div className="modal-content">
-                        <span className="close" onClick={this.hideModal}>&times;</span>
-                        <p>Some text in the Modal..</p>
+                        <span className="modal-close" onClick={this.hideModal}><span className="modal-close-text">&times;</span></span>
+                        <span className="modal-book-info">
+                            <h2>{book.title}</h2>
+                            <h4 className="modal-author">By: {book.author_name}</h4>
+                            <p>{book.summary}</p>
+                        </span>
+                        <img alt="book" className="modal-img" src={book.img} />
+                        <div className="modal-buttons">
+                            <button>Add to Library</button>
+                            <button>Like</button>
+                        </div>
+                        {/* <p>Some text in the Modal..</p> */}
+                        <h1></h1>
                     </div>
 
                 </div>

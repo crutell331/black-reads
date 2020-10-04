@@ -3,7 +3,7 @@ import FeaturedBook from './FeaturedBook'
 
 function GenreRow({ genre }) {
     function renderBooks() {
-        return genre.books.map(book => <FeaturedBook key={book.title} book={book} />)
+        return genre.books_with_authors.map(book => <FeaturedBook key={book.title} book={book} />)
     }
     return (
         // Takes the genre and creates a row with all of the books from that genre
