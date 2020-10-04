@@ -1,12 +1,11 @@
+import './css/App.css';
 import React from 'react';
 import { Route, withRouter, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getBooks, passiveLoginUser, getGenres, getAuthors } from './redux/actions'
 import LoginSignup from './containers/LoginSignup';
-
-import './css/App.css';
 import Navbar from './components/Navbar';
-import GenreContainer from './components/homeComponents/GenreContainer';
+import GenreContainer from './components/genreComponents/GenreContainer';
 import BookShowPage from './components/bookComponents/BookShowPage';
 import AuthorShowPage from './components/authorComponents/AuthorShowPage';
 

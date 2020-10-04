@@ -151,6 +151,11 @@ div.genre-card {
     max-width: 20vw;
     max-height: 40vh;
 }
+div.genre-card >img:hover{
+  cursor: pointer;
+  border-style: groove;
+  border-color: goldenrod;
+}
 h3.book-title{
   color:rgb(221, 216, 216);
   font-size: medium;
