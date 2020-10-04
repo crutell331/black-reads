@@ -58,7 +58,7 @@ class Bar extends React.Component {
                     <div className="user-dropdown-content">
                         {this.sortAndRenderGenres().slice(0, 4)}
                         <div>
-                            <a href="/genres" onClick={this.logoutUser} className="dropdown-item">More...</a>
+                            <a href="/genres/featured" onClick={this.logoutUser} className="dropdown-item">Featured...</a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@ class Bar extends React.Component {
                     <div className="user-dropdown-content">
                         {this.sortAndRenderAuthors().slice(0, 4)}
                         <div>
-                            <a href="/authors" onClick={this.logoutUser} className="dropdown-item">More...</a>
+                            <a href="/authors/featured" onClick={this.logoutUser} className="dropdown-item">Featured...</a>
                         </div>
                     </div>
                 </div>
