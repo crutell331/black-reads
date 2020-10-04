@@ -3,7 +3,7 @@ import { combineReducers } from 'redux'
 let defaultState = {
     user: null,
     books: [],
-    categories: [],
+    genres: [],
     authors: []
 }
 
@@ -25,9 +25,9 @@ function bookReducer(state = defaultState.books, action) {
             return state
     }
 }
-function categoryReducer(state = defaultState.categories, action) {
+function genreReducer(state = defaultState.genres, action) {
     switch (action.type) {
-        case "GET CATEGORIES":
+        case "GET GENRES":
             return action.payload
         default:
             return state
@@ -45,7 +45,7 @@ function authorReducer(state = defaultState.authors, action) {
 let rootReducer = combineReducers({
     user: userReducer,
     books: bookReducer,
-    categories: categoryReducer,
+    genres: genreReducer,
     authors: authorReducer
 })
 

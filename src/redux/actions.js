@@ -16,15 +16,15 @@ function getAuthors() {
             .catch(console.log)
     }
 }
-function getCategories() {
+function getGenres() {
     return function (dispatch) {
         fetch("http://localhost:4000/api/v1/categories")
             .then(resp => resp.json())
             .then(({ data }) => {
-                let categories = data.map((ele) => {
+                let genres = data.map((ele) => {
                     return ele.attributes
                 })
-                dispatch({ type: "GET CATEGORIES", payload: categories })
+                dispatch({ type: "GET GENRES", payload: genres })
             })
             .catch(console.log)
     }
@@ -100,4 +100,4 @@ function passiveLoginUser(token) {
 }
 
 
-export { loginUser, logoutUser, passiveLoginUser, signupUser, getBooks, getCategories, getAuthors }
+export { loginUser, logoutUser, passiveLoginUser, signupUser, getBooks, getGenres, getAuthors }

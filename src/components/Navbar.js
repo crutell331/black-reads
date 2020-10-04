@@ -58,7 +58,7 @@ class Bar extends React.Component {
                     <div className="user-dropdown-content">
                         {this.sortAndRenderGenres().slice(0, 4)}
                         <div>
-                            <a href="/authors" onClick={this.logoutUser} className="dropdown-item">More...</a>
+                            <a href="/genres" onClick={this.logoutUser} className="dropdown-item">More...</a>
                         </div>
                     </div>
                 </div>
@@ -156,7 +156,7 @@ class Bar extends React.Component {
 function msp(state) {
     return {
         user: state.user,
-        genres: state.categories,
+        genres: state.genres,
         authors: state.authors
     }
 }

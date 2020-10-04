@@ -10,7 +10,6 @@ import App from './App';
 const store = createStore(rootReducer, applyMiddleware(thunk))
 ReactDOM.render(
   <StrictMode>
-
     <Provider store={store}>
       <Router>
         <App />

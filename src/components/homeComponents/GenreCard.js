@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
-function CategoryCard(props) {
+function GenreCard(props) {
     return (
         <NavLink to={`/browse/categories/${props.category.name}`} className="itemCard">
             <Card className="bg-dark text-white">
@@ -15,4 +15,4 @@ function CategoryCard(props) {
     )
 }
 
-export default CategoryCard
+export default GenreCard

@@ -21,6 +21,8 @@ img.background-img{
   opacity:.6;
 }
 
+/* Navbar Styling */
+
 div.navbar{
   display:flex;
   flex-direction: row;
@@ -64,22 +66,7 @@ div.form-text{
 div.form-text >p{
   margin-right:5px;
 }
-/* p.navbar-home{
-  position: absolute;
-  left: 30%;
-}
-p.navbar-genres{
-  position: absolute;
-  left: 38%;
-}
-p.navbar-authors{
-  position: absolute;
-  left: 46.7%;
-}
-p.navbar-themes{
-  position: absolute;
-  left: 56%;
-} */
+
 div.navbar-items{
   display:flex;
   flex-direction: row;
@@ -96,7 +83,7 @@ div.navbar-user-dropdown{
   align-content: space-between;
   background-color:rgba(19, 18, 18, 0.644);
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.685);
   z-index: 1;
   position: absolute;
   top: 100%;
@@ -124,4 +111,61 @@ a.dropdown-item{
 }
 a.dropdown-item:hover{
   background-color: darkgoldenrod;
+}
+
+
+
+
+
+div.genre-rows-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    overflow-x: scroll;
+    min-height: 90vh;
+    max-height:90vh;
+    min-width: 100vw;
+    /* border: blueviolet;
+    border-style: dashed; */
+    background-color: rgba(0, 0, 0, 0.767);
+    top: 10%;
+}
+div.genre-cards-deck{
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
+  margin-top: .8%;
+  height: 40vh;
+  /* background-color: rgba(218, 165, 32, 0.418); */
+}
+div.book-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+div.genre-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 10vw;
+    max-width: 20vw;
+    max-height: 40vh;
+}
+h3.book-title{
+  color:rgb(221, 216, 216);
+  font-size: medium;
+}
+div.genre-row{
+  color:rgb(206, 201, 201);
+  font-size:35px;
+  display: flex;
+  flex-direction: column;
+  height:50vh;
+}
+img.book-img {
+    height: 90%;
+    width: 90%;
+}
+div.genre-name{
+  align-self: center;
 }
