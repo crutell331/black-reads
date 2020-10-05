@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink, withRouter } from 'react-router-dom'
-import { logoutUser } from '../redux/actions'
+import { logoutUser } from '../../redux/actions'
 
 class Bar extends React.Component {
 
@@ -89,7 +89,7 @@ class Bar extends React.Component {
                     <div className="user-dropdown-content">
                         {this.sortAndRenderAuthors().slice(0, 4)}
                         <div>
-                            <a href="/authors/featured" onClick={this.logoutUser} className="dropdown-item">Featured...</a>
+                            <a href="/authors" onClick={this.logoutUser} className="dropdown-item">All...</a>
                         </div>
                     </div>
                 </div>

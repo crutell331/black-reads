@@ -4,10 +4,10 @@ import { Route, withRouter, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getBooks, passiveLoginUser, getGenres, getAuthors } from './redux/actions'
 import LoginSignup from './containers/LoginSignup';
-import Navbar from './components/Navbar';
+import Navbar from './components/navigation/Navbar';
 import GenreContainer from './components/genreComponents/GenreContainer';
 import BookShowPage from './components/bookComponents/BookShowPage';
-import AuthorShowPage from './components/authorComponents/AuthorShowPage';
+import IndexContainer from './components/authorComponents/index/IndexContainer';
 
 class App extends React.Component {
 
@@ -53,7 +53,7 @@ class App extends React.Component {
           }} />
           <Route path="/authors" render={() => {
             return (
-              <AuthorShowPage />
+              <IndexContainer />
             )
           }} />
 
