@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import AuthorCard from './AuthorCard'
 
-class IndexContainer extends React.Component {
+class AuthorIndexContainer extends React.Component {
 
     state = {
         searchTerm: ""
@@ -39,4 +39,4 @@ function msp(state) {
     return { authors: state.authors }
 }
 
-export default connect(msp)(IndexContainer)
+export default connect(msp)(AuthorIndexContainer)

@@ -311,3 +311,66 @@ h5.author-index{
   font-size:25px;
 
 }
+
+
+/* Author Show Page */
+div.author-show-container{
+display: flex;
+    flex-direction: row;
+    width: 95%;
+    max-height: 90%;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    overflow:hidden;
+}
+div.bio-container{
+  display: flex;
+  flex-direction: column;
+  max-width: 40vw;
+  overflow:scroll;
+}
+div.bio-container > img{
+  width:40%;
+  height:39%;
+  align-self: center;
+  position: sticky;
+}
+div.bio-container > p{
+  color: whitesmoke;
+  font-size: 22px;
+  max-height:60%;
+  overflow: scroll;
+}
+div.bio-container > h3{
+  align-self: center;
+  color:whitesmoke
+}
+div.author-book-list{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50vw;
+  margin-left:50px;
+  margin-top:20px;
+}
+div.author-show-book{
+  display:flex;
+  width:25%;
+  height: 50%;
+  flex-direction:column;
+}
+div.author-show-book > img{
+  width:90%;
+  height: 60%;
+}
+div.author-show-book > h2{
+  color:whitesmoke;
+  font-size: 30px;
+  height: 10%;
+  width: 90%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow:hidden;
+  margin-bottom: 1px;
+}

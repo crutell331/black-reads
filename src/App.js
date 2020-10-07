@@ -7,7 +7,7 @@ import LoginSignup from './containers/LoginSignup';
 import Navbar from './components/navigation/Navbar';
 import GenreContainer from './components/genreComponents/GenreContainer';
 import BookShowPage from './components/bookComponents/BookShowPage';
-import IndexContainer from './components/authorComponents/index/IndexContainer';
+import AuthorContainer from './components/authorComponents/AuthorContainer';
 
 class App extends React.Component {
 
@@ -53,7 +53,7 @@ class App extends React.Component {
           }} />
           <Route path="/authors" render={() => {
             return (
-              <IndexContainer />
+              <AuthorContainer />
             )
           }} />
 
