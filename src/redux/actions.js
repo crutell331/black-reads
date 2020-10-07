@@ -3,6 +3,24 @@ function logoutUser() {
     return { type: "LOGOUT" }
 }
 
+function addLibraryBook(username, book_id) {
+    return function (dispatch) {
+        fetch(`http://localhost:4000/api/v1/users/${username}/add_library`, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "accepts": "application/json"
+            },
+            body: JSON.stringify({ book_id: book_id })
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                // let book = data.data
+                dispatch({ type: "ADD LIBRARY BOOK", payload: data.data })
+            })
+            .catch(console.log)
+    }
+}
 function getAuthors() {
     return function (dispatch) {
         fetch("http://localhost:4000/api/v1/authors")
@@ -54,7 +72,7 @@ function signupUser(userInfo) {
             .then(({ data }) => {
                 let { attributes } = data
                 localStorage.setItem("token", attributes.encoded_id)
-                dispatch({ type: "ADD USER", payload: { username: attributes.username } })
+                dispatch({ type: "ADD USER", payload: attributes })
             })
             .catch(console.log)
     }
@@ -74,7 +92,7 @@ function loginUser(userInfo) {
             .then(({ data }) => {
                 let { attributes } = data
                 localStorage.setItem("token", attributes.encoded_id)
-                dispatch({ type: "ADD USER", payload: { username: attributes.username } })
+                dispatch({ type: "ADD USER", payload: attributes })
             })
             .catch(console.log)
     }
@@ -93,11 +111,12 @@ function passiveLoginUser(token) {
             .then(({ data }) => {
                 let { attributes } = data
                 localStorage.setItem("token", attributes.encoded_id)
-                dispatch({ type: "ADD USER", payload: { username: attributes.username } })
+                console.log("fetched user: ", attributes)
+                dispatch({ type: "ADD USER", payload: attributes })
             })
             .catch(console.log)
     }
 }
 
 
-export { loginUser, logoutUser, passiveLoginUser, signupUser, getBooks, getGenres, getAuthors }
+export { loginUser, logoutUser, passiveLoginUser, signupUser, getBooks, getGenres, getAuthors, addLibraryBook }

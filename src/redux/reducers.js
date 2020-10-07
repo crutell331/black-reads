@@ -13,6 +13,9 @@ function userReducer(state = defaultState.user, action) {
             return action.payload
         case "LOGOUT":
             return null
+        case "ADD LIBRARY BOOK":
+            let new_user = { ...state, books: [...state.books, action.payload] }
+            return new_user
         default:
             return state
     }
@@ -28,7 +31,6 @@ function bookReducer(state = defaultState.books, action) {
 function genreReducer(state = defaultState.genres, action) {
     switch (action.type) {
         case "GET GENRES":
-            console.log(action.payload)
             return action.payload
         default:
             return state
