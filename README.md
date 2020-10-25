@@ -20,4 +20,4 @@ As a person of color I find it difficult to discover great literature by black a
 
 - Integrating Goodreads API to expand books library
 - Implement book reviews
-- Impliment "book club" feature that allows users to join book clubs and organize discussions together
+- Implement "book club" feature that allows users to join book clubs and organize discussions together
