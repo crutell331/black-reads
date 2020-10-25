@@ -1,6 +1,6 @@
 # Black Reads
 
-[Link to Ruby on Rails Back End Repository](https://github.com/crutell331/black-reads-backend "Back End Repository")
+Link to Back End Repository: [Black Reads Back End](https://github.com/crutell331/black-reads-backend "Back End Repository")
 
 
 ## Motivation and Objective
