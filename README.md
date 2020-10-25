@@ -1,6 +1,7 @@
 # Black Reads
 
-Link to back end repo: (https://github.com/crutell331/black-reads-backend "Ruby on Rails Back End")
+Link to back end repo: [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+
 
 ## Motivation and Objective
 
